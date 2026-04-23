@@ -3,39 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ROBOTICS // CORE</title>
+    <title>VKP ROBEX // PRECISION CORE</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="cursor"></div>
 
     <nav class="nav">
-        <div class="nav-logo" onclick="window.location.reload()" style="cursor: pointer;">VKP ROBEX</div>
-        
-        <div class="nav-cart" id="nav-cart" onclick="openCart()" style="cursor: pointer;">
-            CART [<span id="cart-count">0</span>]
-        </div>
+        <div class="nav-logo" onclick="window.location.reload()">VKP ROBEX</div>
+        <div class="nav-cart" onclick="openCart()">CART [<span id="cart-count">0</span>]</div>
     </nav>
 
     <section class="hero">
         <h1 class="split-text">PRECISION</h1>
         <h1 class="split-text">ROBOTICS.</h1>
-        <p class="hero-sub">// BY VIBHOR KUMAR PANDEY // SERIES 01</p>
+        <p class="hero-sub">// SERIES 01 // AUTONOMOUS COMPONENTS</p>
     </section>
 
     <section class="shop-section">
         <div class="bento-grid" id="product-grid"></div>
     </section>
 
+    <div id="cart-drawer" class="cart-drawer">
+        <div class="drawer-header">
+            <h2>ARCHIVE</h2>
+            <span class="close-drawer" onclick="closeCart()">[ CLOSE ]</span>
+        </div>
+        <div id="cart-items-list" class="cart-content">
+            </div>
+        <div class="drawer-footer">
+            <div class="total-row">
+                <span>TOTAL UNITS:</span>
+                <span id="drawer-count">0</span>
+            </div>
+            <button class="pro-buy-btn" onclick="openModal()">INITIALIZE CHECKOUT</button>
+        </div>
+    </div>
+
     <div id="payment-modal" class="modal">
         <div class="checkout-box">
             <p class="modal-label">// SECURE CHECKOUT</p>
             <div id="modal-content">
+                <input type="text" id="user-name" placeholder="FULL NAME" class="pro-input">
                 <input type="email" id="user-email" placeholder="EMAIL ADDRESS" class="pro-input">
                 <input type="tel" id="user-phone" placeholder="PHONE NUMBER" class="pro-input">
-                <button class="pro-buy-btn" onclick="processPayment()">INITIALIZE PURCHASE</button>
+                <button class="pro-buy-btn" onclick="processPayment()">CONFIRM PURCHASE</button>
             </div>
-            <p onclick="closeModal()" class="close-action" style="cursor: pointer;">[ CANCEL ]</p>
+            <p onclick="closeModal()" class="close-action">[ CANCEL ]</p>
         </div>
     </div>
 
