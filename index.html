@@ -3,41 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ROBO-X | Future Store</title>
+    <title>ROBOTICS // CORE</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="cursor"></div>
 
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
-
-    <nav class="top-bar">
-        <div class="logo">ROBO<span>X</span></div>
-        <div class="nav-right">
-            <div class="cart-icon" onclick="openCart()">
-                🛒 Cart (<span id="cart-count">0</span>)
-            </div>
-        </div>
+    <nav class="nav">
+        <div class="nav-logo">ROBOSYNTH</div>
+        <div class="nav-cart" onclick="openCart()">CART [<span id="cart-count">0</span>]</div>
     </nav>
 
-    <header class="hero">
-        <h1>Advanced Robotics</h1>
-        <p>Premium hardware for the next generation.</p>
-    </header>
+    <section class="hero">
+        <h1 class="split-text">PRECISION</h1>
+        <h1 class="split-text">ROBOTICS.</h1>
+        <p class="hero-sub">// STACK: AUTONOMOUS CORE // SERIES 01</p>
+    </section>
 
-    <main class="product-grid" id="product-grid">
-        </main>
+    <section class="shop-section">
+        <div class="bento-grid" id="product-grid"></div>
+    </section>
 
     <div id="payment-modal" class="modal">
-        <div class="glass-card">
-            <h2 id="modal-title">Complete Purchase</h2>
+        <div class="checkout-box">
+            <p class="modal-label">// SECURE CHECKOUT</p>
             <div id="modal-content">
-                <input type="email" id="user-email" placeholder="Email ID" class="glass-input">
-                <input type="tel" id="user-phone" placeholder="Phone Number" class="glass-input">
-                <button class="buy-btn" onclick="processPayment()">Confirm Order</button>
+                <input type="email" id="user-email" placeholder="EMAIL ADDRESS" class="pro-input">
+                <input type="tel" id="user-phone" placeholder="PHONE NUMBER" class="pro-input">
+                <button class="pro-buy-btn" onclick="processPayment()">INITIALIZE PURCHASE</button>
             </div>
-            <p onclick="closeModal()" class="close-btn">Close</p>
+            <p onclick="closeModal()" class="close-action">[ CANCEL ]</p>
         </div>
     </div>
 
