@@ -1,1 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Experience</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
 
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <nav>
+        <div class="logo">ULTRA</div>
+        <button class="login-trigger" onclick="toggleAuth()">Login</button>
+    </nav>
+
+    <section class="hero">
+        <h1 class="reveal">DESIGN</h1>
+        <h1 class="reveal">BEYOND</h1>
+        <p class="reveal">A professional interface hosted entirely on GitHub.</p>
+    </section>
+
+    <div id="auth-modal" class="modal">
+        <div class="glass-card">
+            <h2>Access Portal</h2>
+            <div class="input-group">
+                <input type="email" placeholder="Email Address" id="email">
+                <input type="password" placeholder="Password" id="password">
+            </div>
+            <button class="submit-btn" onclick="handleAuth()">Enter System</button>
+            <p onclick="toggleAuth()" class="close-btn">Cancel</p>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
