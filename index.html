@@ -10,8 +10,11 @@
     <div class="cursor"></div>
 
     <nav class="nav">
-        <div class="nav-logo">VKP ROBEX</div>
-        <div class="nav-cart" onclick="openCart()">CART [<span id="cart-count">0</span>]</div>
+        <div class="nav-logo" onclick="window.location.reload()" style="cursor: pointer;">VKP ROBEX</div>
+        
+        <div class="nav-cart" id="nav-cart" onclick="openCart()" style="cursor: pointer;">
+            CART [<span id="cart-count">0</span>]
+        </div>
     </nav>
 
     <section class="hero">
@@ -32,7 +35,7 @@
                 <input type="tel" id="user-phone" placeholder="PHONE NUMBER" class="pro-input">
                 <button class="pro-buy-btn" onclick="processPayment()">INITIALIZE PURCHASE</button>
             </div>
-            <p onclick="closeModal()" class="close-action">[ CANCEL ]</p>
+            <p onclick="closeModal()" class="close-action" style="cursor: pointer;">[ CANCEL ]</p>
         </div>
     </div>
 
