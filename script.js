@@ -36,8 +36,6 @@ window.updateCart = function() {
     cartCount++;
     document.getElementById('cart-count').innerText = cartCount;
     document.getElementById('drawer-count').innerText = cartCount;
-    
-    // Smoothly open the drawer automatically when item added
     openCart();
 };
 
@@ -55,7 +53,7 @@ window.closeCart = function() {
 
 // Modal Functions
 window.openModal = function() {
-    closeCart(); // Close drawer if open
+    closeCart();
     document.getElementById('payment-modal').style.display = 'flex';
 };
 
@@ -69,8 +67,7 @@ window.processPayment = function() {
     const phone = document.getElementById('user-phone').value;
 
     if(!name || !email || !phone) {
-        alert("CRITICAL: FULL DATASET REQUIRED.");
-        return;
+        return; // Just stop if empty
     }
 
     document.getElementById('modal-content').innerHTML = `
@@ -81,5 +78,4 @@ window.processPayment = function() {
     `;
 };
 
-// Initial Animations
 gsap.from(".split-text", { y: 100, opacity: 0, duration: 1.2, stagger: 0.15, ease: "power4.out" });
