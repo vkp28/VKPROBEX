@@ -1,192 +1,72 @@
-/* --- Base Styles & Typography --- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    background: linear-gradient(180deg, #020202 0%, #0a0a1a 40%, #1a0a2e 80%, #020202 100%);
-    background-attachment: fixed;
-    background-size: 100% 300%;
-    color: white;
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    overflow-x: hidden;
-}
-
-/* --- Smooth Gradient Background Animation --- */
-.scroll-anim { 
-    animation: gradientShift linear; 
-    animation-timeline: scroll(); 
-}
-
-@keyframes gradientShift { 
-    from { background-position: 0% 0%; } 
-    to { background-position: 0% 100%; } 
-}
-
-/* --- Hero & Visual Enhancements --- */
-.rex-gradient { 
-    background: linear-gradient(to right, #6366f1, #a855f7, #ec4899); 
-    -webkit-background-clip: text; 
-    -webkit-text-fill-color: transparent; 
-}
-
-.glow-1 { 
-    position: absolute; top: -10%; left: -10%; width: 50%; height: 50%; 
-    background: radial-gradient(circle, rgba(79, 70, 229, 0.2) 0%, transparent 70%); 
-    filter: blur(100px); pointer-events: none; 
-}
-
-.glow-2 { 
-    position: absolute; top: 40%; right: -10%; width: 40%; height: 40%; 
-    background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 70%); 
-    filter: blur(100px); pointer-events: none; 
-}
-
-/* --- Navigation & Buttons --- */
-.glass-nav { 
-    background: rgba(0, 0, 0, 0.8); 
-    backdrop-filter: blur(15px); 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
-}
-
-.btn-primary { 
+/* Radiant Blink Animation for Map Dots */
+.dot { 
+    position: absolute; 
+    width: 10px; 
+    height: 10px; 
     background: #6366f1; 
-    color: white; 
-    padding: 10px 32px; 
-    border-radius: 12px; 
-    font-weight: 800; 
-    font-size: 14px; 
-    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
-    border: none;
-    cursor: pointer;
-    transition: transform 0.2s ease, background 0.2s ease;
+    border-radius: 50%; 
+    box-shadow: 0 0 15px #6366f1; 
 }
 
-.btn-primary:hover {
-    background: #4f46e5;
-    transform: translateY(-1px);
+.dot::after {
+    content: ''; 
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    width: 10px; 
+    height: 10px;
+    border: 2px solid #6366f1; 
+    border-radius: 50%; 
+    transform: translate(-50%, -50%);
+    animation: radiant 2.5s infinite ease-out;
 }
 
-/* --- Dashboard Component UI --- */
+@keyframes radiant {
+    0% { width: 10px; height: 10px; opacity: 1; }
+    100% { width: 60px; height: 60px; opacity: 0; }
+}
+
+/* Dashboard UI Components */
 .tab-btn { 
-    padding: 12px 28px; 
-    border-radius: 100px; 
-    font-weight: 800; 
-    font-size: 13px; 
-    text-transform: uppercase; 
-    color: #555; 
-    background: rgba(255,255,255,0.03); 
+    padding: 10px 24px; 
+    border-radius: 8px; 
+    background: #111; 
+    color: #444; 
     border: 1px solid rgba(255,255,255,0.05); 
-    transition: 0.3s;
-    cursor: pointer;
+    font-size: 11px; 
+    font-weight: 900; 
+    transition: 0.3s; 
+    cursor: pointer; 
+    letter-spacing: 1px;
 }
 
 .active-tab { 
     background: #4f46e5; 
     color: white; 
-    box-shadow: 0 0 30px rgba(79, 70, 229, 0.4); 
+    box-shadow: 0 0 20px rgba(79, 70, 229, 0.3); 
+    border-color: #6366f1;
 }
 
 .sidebar-item { 
+    padding: 14px 20px; 
+    background: #0a0a0a; 
+    border: 1px solid rgba(255,255,255,0.03); 
+    border-radius: 10px; 
     display: flex; 
-    align-items: center; 
     justify-content: space-between; 
-    padding: 18px 24px; 
-    background: rgba(255,255,255,0.02); 
-    border: 1px solid rgba(255,255,255,0.05); 
-    border-radius: 16px; 
-    color: #777; 
+    align-items: center; 
+    color: #666; 
     transition: 0.2s; 
     cursor: pointer; 
 }
 
 .sidebar-item:hover { 
     color: white; 
-    background: rgba(255,255,255,0.06); 
-    border-color: rgba(99, 102, 241, 0.5); 
-}
-
-/* --- Global Presence Map & Radiant Dots --- */
-.map-container {
-    padding: 80px 40px;
-    background: #0d0d0d;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.8s ease;
-}
-
-.world-map {
-    width: 100%;
-    filter: grayscale(1) brightness(0.5) contrast(1.2);
-    opacity: 0.8;
-    border-radius: 20px;
-}
-
-.dot {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background: #6366f1;
-    border-radius: 50%;
-    box-shadow: 0 0 15px #6366f1;
-    z-index: 10;
-}
-
-/* The Radiant Pulse Effect */
-.dot::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    border: 2px solid #6366f1;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    animation: radiant-pulse 2.5s infinite ease-out;
-}
-
-@keyframes radiant-pulse {
-    0% {
-        width: 10px;
-        height: 10px;
-        opacity: 1;
-    }
-    100% {
-        width: 60px;
-        height: 60px;
-        opacity: 0;
-    }
-}
-
-/* --- Utilities & Vision Section --- */
-.auth-input { 
-    width: 100%; 
     background: #111; 
-    border: 1px solid #222; 
-    padding: 18px; 
-    border-radius: 14px; 
-    color: white; 
-    outline: none; 
+    border-color: #4f46e5; 
 }
 
-.glass-card { 
-    background: rgba(255, 255, 255, 0.02); 
-    backdrop-filter: blur(20px); 
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Custom Scrollbar for Panel */
-#scrollBox::-webkit-scrollbar {
-    width: 6px;
-}
-#scrollBox::-webkit-scrollbar-track {
-    background: #0d0d0d;
-}
-#scrollBox::-webkit-scrollbar-thumb {
-    background: #312e81;
-    border-radius: 10px;
-}
+/* Smooth Scrollbar for Dashboard */
+#scrollContainer::-webkit-scrollbar { width: 4px; }
+#scrollContainer::-webkit-scrollbar-track { background: #000; }
+#scrollContainer::-webkit-scrollbar-thumb { background: #222; border-radius: 10px; }
