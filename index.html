@@ -3,99 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VKP.REX | Elite Cloud Hosting</title>
+    <title>VKP.REX | Premium Cloud</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
-
-        body {
-            background: #020202;
-            background-image: linear-gradient(180deg, #020202 0%, #0a0a1a 40%, #1a0a2e 80%, #020202 100%);
-            background-attachment: fixed;
-            background-size: 100% 300%;
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            color: white;
-            transition: background 0.5s ease;
-        }
-
-        /* Hero Glows */
-        .glow-1 { position: absolute; top: -10%; left: -10%; width: 50%; height: 50%; background: radial-gradient(circle, rgba(79, 70, 229, 0.2) 0%, transparent 70%); filter: blur(100px); pointer-events: none; z-index: 1; }
-        .glow-2 { position: absolute; top: 40%; right: -10%; width: 40%; height: 40%; background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 70%); filter: blur(100px); pointer-events: none; z-index: 1; }
-
-        /* Typography */
-        .rex-gradient { background: linear-gradient(to right, #6366f1, #a855f7, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-
-        /* Navigation */
-        .glass-nav { background: rgba(2, 2, 2, 0.7); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.05); }
-
-        /* Components */
-        .btn-primary { background: #4f46e5; padding: 12px 32px; border-radius: 99px; font-weight: 800; font-size: 12px; letter-spacing: 1px; transition: 0.3s; }
-        .rex-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); padding: 3rem 2rem; border-radius: 2rem; transition: 0.4s; height: 100%; }
-        .rex-card:hover { transform: translateY(-10px); border-color: rgba(99, 102, 241, 0.5); background: rgba(99, 102, 241, 0.05); }
-
-        /* Dashboard UI */
-        .tab-btn { padding: 10px 24px; border-radius: 100px; font-weight: 600; font-size: 14px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #888; transition: 0.3s; }
-        .active-tab { background: #4f46e5; color: white; box-shadow: 0 0 20px rgba(79, 70, 229, 0.4); }
-        .sidebar-item { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; color: #999; margin-bottom: 8px; cursor: pointer; }
-
-        /* Animation */
-        @keyframes gradientShift { from { background-position: 0% 0%; } to { background-position: 0% 100%; } }
-        .scroll-anim { animation: gradientShift linear; animation-timeline: scroll(); }
-    </style>
 </head>
 <body class="scroll-anim">
 
-    <div id="landingPage" class="relative z-10">
+    <div id="landingPage">
         <div class="glow-1"></div>
         <div class="glow-2"></div>
 
         <nav class="flex justify-between items-center px-8 md:px-20 py-8 sticky top-0 z-50 glass-nav">
-            <div class="text-3xl font-black tracking-tighter uppercase">VKP<span class="text-indigo-500">.REX</span></div>
+            <div class="text-3xl font-black tracking-tighter uppercase text-white">VKP<span class="text-indigo-500">.REX</span></div>
             <button onclick="toggleModal()" class="btn-primary">Login</button>
         </nav>
 
-        <section class="relative pt-32 pb-20 px-6 text-center">
-            <h1 class="text-6xl md:text-8xl font-black mb-8 tracking-tighter leading-none">UNMATCHED <br> <span class="rex-gradient">PERFORMANCE.</span></h1>
-            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-12">Elite hosting solutions for the next generation of creators.</p>
-            <button onclick="toggleModal()" class="bg-white text-black px-10 py-5 rounded-xl font-black text-xl hover:bg-indigo-600 hover:text-white transition-all">Get Started Now</button>
+        <section class="relative pt-32 pb-20 px-6 text-center overflow-hidden">
+            <h1 class="text-6xl md:text-9xl font-black mb-8 tracking-tighter text-white">UNMATCHED <br> <span class="rex-gradient">PERFORMANCE.</span></h1>
+            <p class="text-gray-400 text-lg md:text-2xl max-w-3xl mx-auto mb-12">Elite infrastructure for the next generation.</p>
+            <button onclick="toggleModal()" class="bg-white text-black px-12 py-5 rounded-xl font-black text-xl hover:bg-indigo-600 hover:text-white transition-all">Get Started</button>
         </section>
 
-        <section id="pricing" class="py-20 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="rex-card">
-                <h3 class="text-2xl font-bold mb-4">Game Hosting</h3>
-                <div class="text-4xl font-black mb-8">$2.99<span class="text-sm text-gray-500">/gb</span></div>
-                <button onclick="toggleModal()" class="w-full py-4 border border-white/10 rounded-xl hover:bg-indigo-600 transition">Deploy Now</button>
-            </div>
-            <div class="rex-card border-indigo-500 bg-indigo-500/5">
-                <h3 class="text-2xl font-bold mb-4">VPS Pro</h3>
-                <div class="text-4xl font-black mb-8">$14.99<span class="text-sm text-gray-500">/mo</span></div>
-                <button onclick="toggleModal()" class="w-full py-4 bg-indigo-600 rounded-xl hover:bg-indigo-500 transition">Deploy Now</button>
-            </div>
-            <div class="rex-card">
-                <h3 class="text-2xl font-bold mb-4">Web Smart</h3>
-                <div class="text-4xl font-black mb-8">$1.99<span class="text-sm text-gray-500">/mo</span></div>
-                <button onclick="toggleModal()" class="w-full py-4 border border-white/10 rounded-xl hover:bg-indigo-600 transition">Deploy Now</button>
-            </div>
-        </section>
-
-        <section class="max-w-6xl mx-auto px-6 py-32 border-t border-white/5">
+        <section class="max-w-7xl mx-auto px-6 py-32">
             <div class="flex flex-col lg:flex-row gap-16 items-center">
                 <div class="flex-1">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-1.5 h-10 bg-indigo-500 rounded-full"></div>
-                        <h2 class="text-5xl font-black uppercase tracking-tight">Our Vision</h2>
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-1.5 h-12 bg-indigo-500 rounded-full"></div>
+                        <h2 class="text-5xl font-black uppercase text-white">Our Vision</h2>
                     </div>
-                    <p class="text-gray-400 text-xl leading-relaxed mb-8">Founded by VKP.REX, we democratize enterprise-grade hosting. We believe exceptional infrastructure should be accessible to everyone.</p>
+                    <p class="text-gray-400 text-xl leading-relaxed mb-6">Founded by VKP.REX, we democratize enterprise-grade hosting. We believe exceptional cloud infrastructure should be accessible to everyone.</p>
+                    <div class="bg-white/5 p-4 rounded-xl border border-white/10 flex items-center gap-4">
+                        <i class="fas fa-bolt text-indigo-500"></i>
+                        <p class="text-sm text-gray-400 italic">"Scaling seamlessly while maintaining excellence".</p>
+                    </div>
                 </div>
-                <div class="flex-1 glass-nav p-12 rounded-[3rem] border border-white/10">
-                    <p class="text-2xl text-gray-200 italic mb-8">"Our mission is to break down barriers in cloud computing. We're committed to simplicity and affordability."</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center font-bold">REX</div>
-                        <div>
-                            <p class="font-bold">VKP.REX Admin</p>
-                            <p class="text-indigo-400 text-xs font-bold uppercase">Founder & CEO</p>
+                <div class="flex-1">
+                    <div class="glass-card p-12 rounded-[3rem] border border-white/10 relative">
+                        <i class="fas fa-quote-left text-6xl text-indigo-500/10 absolute top-10 left-10"></i>
+                        <p class="text-2xl text-gray-200 mb-10 relative z-10 italic leading-relaxed">
+                            "Our mission is to break down barriers in cloud computing. We're committed to delivering simplicity and affordability at our core".
+                        </p>
+                        <div class="flex items-center gap-5 border-t border-white/10 pt-8">
+                            <div class="w-16 h-16 rounded-full bg-indigo-600 flex items-center justify-center font-black text-white">VKP</div>
+                            <div>
+                                <h4 class="font-bold text-white text-xl">VKP.REX Admin</h4>
+                                <p class="text-indigo-400 text-xs font-bold uppercase tracking-widest">Founder & CEO</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -103,59 +57,35 @@
         </section>
     </div>
 
-    <div id="loginModal" class="fixed inset-0 bg-black/95 hidden flex justify-center items-center z-[100] backdrop-blur-xl">
-        <div class="bg-[#0a0a0a] border border-white/10 p-10 rounded-[2.5rem] w-full max-w-md">
-            <h2 id="modalTitle" class="text-3xl font-black mb-8">Access Panel</h2>
-            <form id="authForm" class="space-y-4">
-                <input type="email" id="email" placeholder="Email" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl outline-none focus:border-indigo-500" required>
-                <input type="password" id="password" placeholder="Password" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl outline-none focus:border-indigo-500" required>
-                <button type="submit" class="w-full py-4 bg-indigo-600 rounded-xl font-bold shadow-lg shadow-indigo-600/20">Enter Control Center</button>
-            </form>
-            <button onclick="toggleModal()" class="w-full mt-4 text-gray-500 text-sm">Close</button>
-        </div>
-    </div>
-
-    <div id="dashboard" class="fixed inset-0 bg-[#050505] hidden z-[200] flex flex-col">
-        <header class="flex justify-between items-center px-8 py-4 border-b border-white/5 bg-[#080808]">
-            <div class="text-xl font-bold">VKP<span class="text-indigo-500">.REX</span></div>
-            <button onclick="location.reload()" class="text-red-500 text-sm font-bold bg-red-500/10 px-4 py-2 rounded-lg">Logout</button>
+    <div id="dashboard" class="fixed inset-0 bg-[#020202] hidden z-[200] flex flex-col">
+        <header class="flex justify-between items-center px-8 py-4 border-b border-white/5 bg-black/50 backdrop-blur-md">
+            <div class="text-xl font-bold text-white">VKP<span class="text-indigo-500">.REX</span></div>
+            <button onclick="location.reload()" class="text-red-500 font-bold px-4 py-2 bg-red-500/10 rounded-lg">Logout</button>
         </header>
-        <div class="flex justify-center gap-4 py-6 bg-[#0a0a0a]">
+        <div class="flex justify-center gap-4 py-6 bg-[#050505] border-b border-white/5">
             <button onclick="switchTab('game')" id="tab-game" class="tab-btn active-tab">Game Hosting</button>
             <button onclick="switchTab('web')" id="tab-web" class="tab-btn">Web Hosting</button>
             <button onclick="switchTab('vps')" id="tab-vps" class="tab-btn">VPS Hosting</button>
+            <button onclick="switchTab('reseller')" id="tab-reseller" class="tab-btn">Reseller</button>
         </div>
         <main class="flex flex-1 overflow-hidden p-6 gap-6">
-            <aside id="sidebar" class="w-72 space-y-2"></aside>
-            <div class="flex-1 bg-black rounded-2xl border border-white/10 overflow-hidden relative">
-                <div id="panelView" class="w-full h-full"></div>
-            </div>
+            <aside id="sidebar" class="w-80 space-y-2"></aside>
+            <div id="panelView" class="flex-1 rounded-3xl border border-white/10 overflow-hidden bg-[#0d0d0d]"></div>
         </main>
     </div>
 
-    <script>
-        const panels = {
-            game: { url: "gp.vkprex.cloud", sidebar: ["Console", "Files", "Players"], content: `<div class='p-8'><h2 class='text-2xl font-bold mb-4 text-indigo-400'>Minecraft Console</h2><div class='bg-black border border-white/10 p-4 font-mono text-green-500 text-sm rounded-lg'>[INFO] Loading world...<br>[INFO] Server started on port 25565</div></div>` },
-            web: { url: "web.vkprex.cloud", sidebar: ["File Manager", "Databases", "SSL"], content: `<div class='p-8'><h2 class='text-2xl font-bold mb-4 text-orange-400'>Web Hosting (cPanel)</h2><div class='grid grid-cols-3 gap-4'><div class='bg-white/5 p-6 rounded-xl'>MySQL</div><div class='bg-white/5 p-6 rounded-xl'>FTP</div><div class='bg-white/5 p-6 rounded-xl'>DNS</div></div></div>` },
-            vps: { url: "vps.vkprex.cloud", sidebar: ["Reinstall OS", "Stats", "Firewall"], content: `<div class='p-8'><h2 class='text-2xl font-bold mb-4 text-blue-400'>VPS Management</h2><p class='text-gray-400'>Status: <span class='text-green-500'>Online</span></p></div>` }
-        };
+    <div id="loginModal" class="fixed inset-0 bg-black/95 hidden flex justify-center items-center z-[300] backdrop-blur-xl">
+        <div class="bg-[#0a0a0a] border border-white/10 p-10 rounded-[2.5rem] w-full max-w-md">
+            <h2 class="text-3xl font-black mb-8 text-white text-center uppercase">Identity Check</h2>
+            <form id="authForm" class="space-y-4">
+                <input type="email" placeholder="Email" class="auth-input" required>
+                <input type="password" placeholder="Password" class="auth-input" required>
+                <button type="submit" class="w-full py-4 bg-indigo-600 rounded-xl font-bold text-white shadow-lg shadow-indigo-600/30">Authorize</button>
+            </form>
+            <button onclick="toggleModal()" class="w-full mt-4 text-gray-600">Cancel</button>
+        </div>
+    </div>
 
-        function toggleModal() { document.getElementById('loginModal').classList.toggle('hidden'); }
-
-        document.getElementById('authForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            document.getElementById('dashboard').classList.remove('hidden');
-            document.getElementById('landingPage').classList.add('hidden');
-            switchTab('game');
-        });
-
-        function switchTab(type) {
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active-tab'));
-            document.getElementById(`tab-${type}`).classList.add('active-tab');
-            const data = panels[type];
-            document.getElementById('panelView').innerHTML = data.content;
-            document.getElementById('sidebar').innerHTML = data.sidebar.map(item => `<div class="sidebar-item"><span>${item}</span><i class="fas fa-chevron-right text-[10px]"></i></div>`).join('');
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
