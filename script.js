@@ -1,11 +1,11 @@
 let isSignUp = true;
-// Add scroll-based background animation
 document.body.classList.add('scroll-gradient');
+
 const panels = {
-    game: { url: "gp.vkprex.cloud", sidebar: ["Real-Time Console", "Mods Installer", "Plugin Installer", "Config Editor"], content: `<img src="game-panel.png" class="w-full h-full object-cover">` },
-    web: { url: "smartweb.vkprex.cloud", sidebar: ["File Manager", "Database Manager", "SSL & Security", "1-Click Installer"], content: `<img src="web-panel.png" class="w-full h-full object-cover">` },
-    vps: { url: "vps.vkprex.cloud", sidebar: ["OS Reinstallation", "SSH Keys", "Monitoring", "Firewall"], content: `<img src="vps-panel.png" class="w-full h-full object-cover">` },
-    reseller: { url: "reseller.vkprex.cloud", sidebar: ["Home Panel", "Manage Clients", "Panel Settings"], content: `<img src="reseller-panel.png" class="w-full h-full object-cover">` }
+    game: { url: "gp.vkprex.cloud", sidebar: ["Console", "Mods", "Plugins", "Players", "Settings"], content: `<img src="game-panel.png" class="w-full h-full object-cover">` },
+    web: { url: "smartweb.vkprex.cloud", sidebar: ["Files", "Databases", "SSL", "Email", "Installer"], content: `<img src="web-panel.png" class="w-full h-full object-cover">` },
+    vps: { url: "vps.vkprex.cloud", sidebar: ["Reinstall", "SSH Keys", "Stats", "Firewall"], content: `<img src="vps-panel.png" class="w-full h-full object-cover">` },
+    reseller: { url: "reseller.vkprex.cloud", sidebar: ["Clients", "Logs", "Profit", "Branding"], content: `<img src="reseller-panel.png" class="w-full h-full object-cover">` }
 };
 
 function toggleModal() { document.getElementById('loginModal').classList.toggle('hidden'); }
@@ -23,13 +23,13 @@ document.getElementById('authForm').addEventListener('submit', (e) => {
     const pass = document.getElementById('password').value;
     if (isSignUp) {
         localStorage.setItem(`vkp_rex_${email}`, pass);
-        alert("Account Created!"); toggleAuthMode();
+        alert("VKP.REX Account Created!"); toggleAuthMode();
     } else {
         if (localStorage.getItem(`vkp_rex_${email}`) === pass) {
             localStorage.setItem('rex_session', 'active');
             localStorage.setItem('rex_email', email);
             enterDashboard(email);
-        } else { alert("Incorrect details!"); }
+        } else { alert("Access Denied: Incorrect credentials."); }
     }
 });
 
@@ -39,12 +39,18 @@ function switchTab(type) {
     const data = panels[type];
     document.getElementById('urlBar').innerText = data.url;
     document.getElementById('panelView').innerHTML = data.content;
-    document.getElementById('sidebar').innerHTML = data.sidebar.map(item => `<div class="sidebar-item"><span>${item}</span><i class="fas fa-chevron-right text-[10px]"></i></div>`).join('');
+    document.getElementById('sidebar').innerHTML = data.sidebar.map(item => `
+        <div class="sidebar-item">
+            <span>${item}</span>
+            <i class="fas fa-chevron-right text-[10px]"></i>
+        </div>
+    `).join('');
 }
 
 function enterDashboard(email) {
     document.getElementById('dashboard').classList.remove('hidden');
     document.getElementById('landingPage').classList.add('hidden');
+    document.body.style.overflow = 'hidden'; 
     switchTab('game');
 }
 
