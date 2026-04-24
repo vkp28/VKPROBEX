@@ -3,83 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VKP.REX | Elite Infrastructure</title>
+    <title>VKP.REX | Unmatched Performance</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body class="bg-purple-dark text-white font-sans overflow-x-hidden">
 
-    <div id="authModal" class="fixed inset-0 bg-black/90 hidden z-[300] flex justify-center items-center backdrop-blur-xl">
-        <div class="bg-[#120a2e] border border-white/10 p-10 rounded-[2.5rem] w-full max-w-md shadow-2xl">
+    <div id="authModal" class="fixed inset-0 bg-black/95 hidden z-[300] flex justify-center items-center backdrop-blur-2xl">
+        <div class="bg-[#0d0721] border border-purple-500/20 p-10 rounded-[2.5rem] w-full max-w-md shadow-[0_0_50px_rgba(124,58,237,0.2)]">
             <h2 id="authTitle" class="text-3xl font-black mb-2 text-white uppercase italic tracking-tighter">Login</h2>
-            <p id="authSubtitle" class="text-gray-400 text-sm mb-8 font-bold uppercase tracking-widest">Access VKP.REX Infrastructure</p>
+            <p id="authSubtitle" class="text-purple-400/60 text-[10px] mb-8 font-bold uppercase tracking-[0.2em]">Secure Access Portal</p>
             
             <form id="authForm" class="space-y-4">
                 <input type="text" id="authName" placeholder="Full Name" class="auth-input hidden">
                 <input type="email" id="authEmail" placeholder="Email Address" class="auth-input" required>
                 <input type="password" id="authPass" placeholder="Password" class="auth-input" required>
-                <button type="submit" class="btn-glow-large w-full py-4 mt-4">CONTINUE</button>
+                <button type="submit" class="btn-glow-large w-full py-4 mt-4 uppercase">Initialize Session</button>
             </form>
 
             <div class="mt-8 text-center">
-                <p id="toggleText" class="text-gray-500 text-xs font-bold uppercase tracking-widest cursor-pointer hover:text-purple-glow transition" onclick="toggleAuthMode()">
-                    Don't have an account? Sign Up
+                <p id="toggleText" class="text-gray-500 text-[10px] font-black uppercase tracking-widest cursor-pointer hover:text-purple-400 transition" onclick="toggleAuthMode()">
+                    New Operator? Sign Up
                 </p>
-                <button onclick="closeModal()" class="mt-4 text-gray-700 text-[10px] font-black uppercase tracking-widest hover:text-white transition">Cancel</button>
+                <button onclick="closeModal()" class="mt-6 text-gray-700 text-[9px] font-black uppercase tracking-widest hover:text-white transition">Terminate Connection</button>
             </div>
         </div>
     </div>
 
     <div id="landingPage">
+        <div class="bg-purple-600/10 border-b border-purple-500/10 py-2 overflow-hidden whitespace-nowrap">
+            <div class="flex gap-10 animate-marquee text-[9px] font-black uppercase tracking-[0.3em] text-purple-400/80">
+                <span>Network Status: Optimal</span> <span>Latency: 12ms</span> <span>Uptime: 99.99%</span> <span>Hardware: Enterprise Grade</span>
+                <span>Network Status: Optimal</span> <span>Latency: 12ms</span> <span>Uptime: 99.99%</span> <span>Hardware: Enterprise Grade</span>
+            </div>
+        </div>
+
         <nav class="flex justify-between items-center px-10 py-8 sticky top-0 z-50 glass-nav border-b border-white/5">
             <div class="text-2xl font-black uppercase tracking-tighter italic">VKP<span class="text-purple-glow">.REX</span></div>
-            <div class="hidden lg:flex gap-10 items-center text-[11px] font-bold uppercase tracking-widest text-gray-400">
-                <a href="#" class="hover:text-purple-glow transition">Game Hosting</a>
-                <div class="hover:text-purple-glow cursor-pointer transition">Hosting Services <i class="fas fa-chevron-down ml-1 text-[8px]"></i></div>
-                <div class="hover:text-purple-glow cursor-pointer transition">Important <i class="fas fa-chevron-down ml-1 text-[8px]"></i></div>
+            <div class="hidden lg:flex gap-10 items-center text-[10px] font-black uppercase tracking-[0.2em] text-gray-400">
+                <a href="#" class="hover:text-purple-glow transition">Game Nodes</a>
+                <div class="hover:text-purple-glow cursor-pointer transition">Cloud Services</div>
+                <div class="hover:text-purple-glow cursor-pointer transition">Network</div>
                 <a href="#" class="hover:text-purple-glow transition">Legal</a>
             </div>
-            <div class="flex items-center gap-6">
-                <div class="text-purple-glow font-bold">$ <span class="text-gray-400">USD</span></div>
-                <button onclick="openAuth()" class="btn-glow">LOGIN</button>
-            </div>
+            <button onclick="openAuth()" class="btn-glow px-8">LOG IN</button>
         </nav>
 
         <section class="relative py-40 text-center">
             <div class="hero-blur"></div>
-            <h1 class="text-7xl md:text-9xl font-black mb-6 tracking-tighter uppercase italic">VKP<span class="text-purple-glow">.REX</span></h1>
-            <p class="text-gray-400 text-xl md:text-2xl max-w-2xl mx-auto mb-12">Next-generation hosting for elite performance.</p>
-            <button onclick="openAuth()" class="btn-glow-large">GET STARTED</button>
+            <h1 class="text-7xl md:text-[10rem] font-black mb-6 tracking-tighter uppercase italic leading-none">VKP<span class="text-purple-glow">.REX</span></h1>
+            <p class="text-purple-200/50 text-lg md:text-xl max-w-2xl mx-auto mb-12 uppercase font-bold tracking-[0.3em]">Unmatched Performance</p>
+            <button onclick="openAuth()" class="btn-glow-large">DEPLOY INFRASTRUCTURE</button>
         </section>
 
-        <section class="max-w-6xl mx-auto px-10 py-32 border-t border-white/5">
-            <h2 class="text-4xl font-black mb-10 uppercase italic tracking-tighter">Our Vision</h2>
-            <div class="grid lg:grid-cols-2 gap-20">
-                <div class="space-y-6 text-gray-400 text-lg leading-relaxed">
-                    <p>Founded by <span class="text-white font-bold">VKP.REX</span>, we are driven to democratize enterprise-grade hosting solutions. We believe exceptional infrastructure should be accessible to everyone.</p>
-                    <p class="text-white italic border-l-4 border-purple-600 pl-8">"Our infrastructure scales seamlessly while maintaining excellence."</p>
-                    <div class="pt-4">
-                        <p class="text-white font-bold uppercase text-2xl">VKP.REX Admin</p>
-                        <p class="text-purple-glow font-bold uppercase text-xs">Founder & CEO</p>
+        <section class="max-w-6xl mx-auto px-10 py-32 border-t border-purple-500/10">
+            <div class="flex flex-col md:flex-row gap-20">
+                <div class="md:w-1/2">
+                    <h2 class="text-4xl font-black mb-10 uppercase italic tracking-tighter">Our Vision</h2>
+                    <div class="space-y-8 text-gray-400 text-lg">
+                        <p>Founded by <span class="text-white">VKP.REX</span>, we provide the raw power needed for high-stakes digital environments.</p>
+                        <p class="text-white italic border-l-2 border-purple-600 pl-6">"Performance isn't a feature; it's our standard."</p>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex items-center justify-center">
+                    <div class="glass-card p-10 rounded-3xl border border-white/5 text-center w-full">
+                        <div class="text-5xl font-black text-purple-glow mb-2">99.9%</div>
+                        <div class="text-[10px] uppercase font-black tracking-widest text-gray-500">Guaranteed Uptime</div>
                     </div>
                 </div>
             </div>
         </section>
     </div>
 
-    <div id="dashboard" class="fixed inset-0 bg-[#070412] hidden z-[100] flex flex-col">
+    <div id="dashboard" class="fixed inset-0 bg-[#06030e] hidden z-[100] flex flex-col">
         <header class="flex justify-between items-center px-8 py-5 border-b border-white/5 bg-black/40 backdrop-blur-xl">
-            <div class="text-xl font-black uppercase italic tracking-tighter">VKP<span class="text-purple-glow">.REX</span></div>
-            <button onclick="location.reload()" class="text-gray-500 hover:text-white font-bold text-xs uppercase transition">Logout</button>
+            <div class="text-xl font-black uppercase italic tracking-tighter">VKP<span class="text-purple-glow">.REX</span> <span class="text-[9px] ml-4 text-gray-500 tracking-[0.5em]">SYSTEM CONTROL</span></div>
+            <button onclick="location.reload()" class="text-purple-500 hover:text-white font-black text-[10px] uppercase transition">Disconnect</button>
         </header>
-        <div class="flex justify-center gap-4 py-6 bg-[#0a061a] border-b border-white/5">
-            <button onclick="switchTab('game')" id="tab-game" class="tab-btn active-tab">GAME PANEL</button>
-            <button onclick="switchTab('web')" id="tab-web" class="tab-btn">WEB PANEL</button>
+        <div class="flex justify-center gap-4 py-6 bg-[#080516]">
+            <button onclick="switchTab('game')" id="tab-game" class="tab-btn active-tab">GAME NODES</button>
+            <button onclick="switchTab('web')" id="tab-web" class="tab-btn">WEB CLOUD</button>
         </div>
         <main class="flex flex-1 overflow-hidden p-6 gap-6">
-            <aside id="sidebar" class="w-80 space-y-3 overflow-y-auto"></aside>
-            <div id="panelView" class="flex-1 rounded-[2.5rem] border border-white/10 overflow-hidden bg-black/60 shadow-2xl"></div>
+            <aside id="sidebar" class="w-72 space-y-2 overflow-y-auto"></aside>
+            <div id="panelView" class="flex-1 rounded-[2.5rem] border border-white/5 overflow-hidden bg-black/80 shadow-2xl"></div>
         </main>
     </div>
 
