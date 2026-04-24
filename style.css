@@ -1,27 +1,62 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
 
+/* Dynamic Background Scroll */
 body {
     background: linear-gradient(180deg, #020202 0%, #0a0a1a 40%, #1a0a2e 80%, #020202 100%);
     background-attachment: fixed;
     background-size: 100% 300%;
     color: white;
+    font-family: 'Inter', sans-serif;
 }
 
-/* Animations */
-.scroll-anim { animation: gradientShift linear; animation-timeline: scroll(); }
-@keyframes gradientShift { from { background-position: 0% 0%; } to { background-position: 0% 100%; } }
+.scroll-anim { 
+    animation: gradientShift linear; 
+    animation-timeline: scroll(); 
+}
 
-/* Hero Visuals */
+@keyframes gradientShift { 
+    from { background-position: 0% 0%; } 
+    to { background-position: 0% 100%; } 
+}
+
+/* Hero & Visuals */
 .glow-1 { position: absolute; top: -10%; left: -10%; width: 50%; height: 50%; background: radial-gradient(circle, rgba(79, 70, 229, 0.2) 0%, transparent 70%); filter: blur(100px); pointer-events: none; }
 .glow-2 { position: absolute; top: 40%; right: -10%; width: 40%; height: 40%; background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 70%); filter: blur(100px); pointer-events: none; }
 .rex-gradient { background: linear-gradient(to right, #6366f1, #a855f7, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-/* Dashboard UI */
+/* Navigation & Header */
+.glass-nav { background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+
+.btn-primary { 
+    background: #6366f1; 
+    color: white; 
+    padding: 10px 32px; 
+    border-radius: 12px; 
+    font-weight: 800; 
+    font-size: 14px; 
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+    border: none;
+    cursor: pointer;
+}
+
+/* Dashboard Component Styles */
 .tab-btn { padding: 12px 28px; border-radius: 100px; font-weight: 800; font-size: 13px; text-transform: uppercase; color: #555; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; }
 .active-tab { background: #4f46e5; color: white; box-shadow: 0 0 30px rgba(79, 70, 229, 0.4); }
 
-.sidebar-item { display: flex; align-items: center; justify-content: space-between; padding: 18px 24px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; color: #777; transition: 0.2s; cursor: pointer; }
+.sidebar-item { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 18px 24px; 
+    background: rgba(255,255,255,0.02); 
+    border: 1px solid rgba(255,255,255,0.05); 
+    border-radius: 16px; 
+    color: #777; 
+    transition: 0.2s; 
+    cursor: pointer; 
+}
 .sidebar-item:hover { color: white; background: rgba(255,255,255,0.06); border-color: rgba(99, 102, 241, 0.5); }
 
+/* Utility */
 .auth-input { width: 100%; background: #111; border: 1px solid #222; padding: 18px; border-radius: 14px; color: white; outline: none; }
 .glass-card { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(20px); }
