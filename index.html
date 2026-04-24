@@ -1,112 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VKP.REX | Elite Cloud Hosting</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-</head>
-<body class="bg-[#020202] text-white font-sans selection:bg-indigo-500/30">
-
-    <div id="landingPage">
-        <div class="glow-1"></div>
-        <div class="glow-2"></div>
-
-        <nav class="flex justify-between items-center px-8 md:px-20 py-8 sticky top-0 z-50 glass-nav">
-            <div class="text-3xl font-black tracking-tighter uppercase">VKP<span class="text-indigo-500">.REX</span></div>
-            <div class="hidden lg:flex gap-10 text-sm font-bold uppercase tracking-widest text-gray-400">
-                <a href="#hero" class="hover:text-indigo-400 transition">Home</a>
-                <a href="#pricing" class="hover:text-indigo-400 transition">Pricing</a>
-                <a href="#" class="hover:text-indigo-400 transition">Status</a>
+<section class="max-w-6xl mx-auto px-6 py-20">
+    <div class="flex flex-col lg:flex-row gap-12 items-center">
+        <div class="flex-1">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-1 h-8 bg-indigo-500"></div>
+                <h2 class="text-4xl font-black uppercase tracking-tight">Our Vision</h2>
             </div>
-            <button onclick="toggleModal()" class="btn-primary">Login</button>
-        </nav>
-
-        <section id="hero" class="relative pt-32 pb-20 px-6 text-center overflow-hidden">
-            <div class="inline-block px-4 py-1.5 mb-6 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-400 text-xs font-bold uppercase tracking-widest animate-pulse">
-                🚀 New: Ryzen 9 7950X Nodes Now Live
-            </div>
-            <h1 class="text-6xl md:text-9xl font-black mb-8 tracking-tighter leading-none">
-                UNMATCHED <br> <span class="rex-gradient">PERFORMANCE.</span>
-            </h1>
-            <p class="text-gray-400 text-lg md:text-2xl max-w-3xl mx-auto mb-12 leading-relaxed">
-                The most advanced hosting panel on the market. Built for champions.
+            <p class="text-gray-400 text-lg leading-relaxed mb-6">
+                Founded by <span class="text-white font-bold">VKP.REX</span>, we are driven by a singular vision: to democratize enterprise-grade hosting solutions. We believe that exceptional cloud infrastructure should be accessible to everyone, without compromising on performance, security, or reliability.
             </p>
-            <div class="flex flex-col md:flex-row justify-center gap-6">
-                <button onclick="toggleModal()" class="btn-primary-large hover:cursor-pointer">Get Started Now</button>
-                <a href="#pricing" class="btn-outline-large">View Plans</a>
-            </div>
-
-            <div class="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto py-12 border-y border-white/5 bg-white/2 backdrop-blur-sm rounded-2xl">
-                <div><h4 class="text-4xl font-black text-white">99.9%</h4><p class="text-gray-500 text-sm uppercase">Uptime</p></div>
-                <div><h4 class="text-4xl font-black text-white">2.5ms</h4><p class="text-gray-500 text-sm uppercase">Latency</p></div>
-                <div><h4 class="text-4xl font-black text-white">24/7</h4><p class="text-gray-500 text-sm uppercase">Support</p></div>
-                <div><h4 class="text-4xl font-black text-white">50k+</h4><p class="text-gray-500 text-sm uppercase">Nodes</p></div>
-            </div>
-        </section>
-
-        <section id="pricing" class="py-32 px-6">
-            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="rex-card group">
-                    <h3 class="text-2xl font-bold mb-2">Game Node</h3>
-                    <div class="text-4xl font-black mb-8 text-white">$2.99 <span class="text-sm text-gray-500">/gb</span></div>
-                    <button onclick="toggleModal()" class="w-full py-4 rounded-xl bg-white/5 border border-white/10 font-bold hover:bg-indigo-600 transition">Deploy</button>
+            <p class="text-gray-400 text-lg leading-relaxed mb-8">
+                We're building more than a hosting platform—we're creating an ecosystem where performance meets simplicity.
+            </p>
+            <div class="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/10">
+                <div class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center">
+                    <i class="fas fa-bolt"></i>
                 </div>
-                <div class="rex-card border-indigo-600 bg-indigo-600/5 scale-105 shadow-2xl shadow-indigo-600/20">
-                    <h3 class="text-2xl font-bold mb-2">VPS Pro</h3>
-                    <div class="text-4xl font-black mb-8 text-white">$14.99 <span class="text-sm text-gray-500">/mo</span></div>
-                    <button onclick="toggleModal()" class="w-full py-4 rounded-xl bg-indigo-600 font-bold hover:bg-indigo-500 transition">Deploy</button>
-                </div>
-                <div class="rex-card group">
-                    <h3 class="text-2xl font-bold mb-2">Web Smart</h3>
-                    <div class="text-4xl font-black mb-8 text-white">$1.99 <span class="text-sm text-gray-500">/mo</span></div>
-                    <button onclick="toggleModal()" class="w-full py-4 rounded-xl bg-white/5 border border-white/10 font-bold hover:bg-indigo-600 transition">Deploy</button>
-                </div>
+                <p class="text-sm text-gray-300 italic">"Our infrastructure scales seamlessly while maintaining excellence."</p>
             </div>
-        </section>
-    </div>
-
-    <div id="loginModal" class="fixed inset-0 bg-black/95 hidden flex justify-center items-center z-[100] backdrop-blur-xl">
-        <div class="bg-[#0a0a0a] border border-white/10 p-10 rounded-[2rem] w-full max-w-md relative">
-            <button onclick="toggleModal()" class="absolute top-6 right-8 text-gray-500 hover:text-white text-3xl">&times;</button>
-            <h2 id="modalTitle" class="text-4xl font-black mb-2 text-white">Sign Up</h2>
-            <p id="modalSub" class="text-gray-500 mb-8">Access the Rex Control Panel.</p>
-            <form id="authForm" class="space-y-4">
-                <input type="email" id="email" placeholder="Email Address" required class="auth-input">
-                <input type="password" id="password" placeholder="Password" required class="auth-input">
-                <button type="submit" id="submitBtn" class="w-full py-4 bg-indigo-600 rounded-xl font-bold hover:bg-indigo-500 transition shadow-lg shadow-indigo-600/30">Create Account</button>
-            </form>
-            <button onclick="toggleAuthMode()" id="toggleBtn" class="w-full mt-6 text-indigo-400 text-sm font-bold uppercase tracking-widest">Switch to Login</button>
-        </div>
-    </div>
-
-    <div id="dashboard" class="fixed inset-0 bg-[#050505] hidden z-[200] flex flex-col">
-        <header class="flex justify-between items-center px-8 py-4 border-b border-white/5 bg-[#080808]">
-            <div class="text-xl font-bold">VKP<span class="text-indigo-500">.REX</span></div>
-            <button onclick="logout()" class="text-red-500 text-sm font-bold bg-red-500/10 px-4 py-2 rounded-lg">Logout</button>
-        </header>
-
-        <div class="flex justify-center gap-4 py-6 bg-[#0a0a0a]">
-            <button onclick="switchTab('game')" id="tab-game" class="tab-btn active-tab">Game Hosting</button>
-            <button onclick="switchTab('web')" id="tab-web" class="tab-btn">Web Hosting</button>
-            <button onclick="switchTab('vps')" id="tab-vps" class="tab-btn">VPS Hosting</button>
-            <button onclick="switchTab('reseller')" id="tab-reseller" class="tab-btn text-emerald-400">Reseller</button>
         </div>
 
-        <main class="flex flex-1 overflow-hidden p-6 gap-6">
-            <aside id="sidebar" class="w-72 space-y-2"></aside>
-            <div class="flex-1 glass rounded-2xl border border-white/10 overflow-hidden flex flex-col">
-                <div class="bg-[#151515] p-3 flex items-center gap-3">
-                    <div class="flex gap-1.5"><div class="w-3 h-3 rounded-full bg-red-500"></div><div class="w-3 h-3 rounded-full bg-yellow-500"></div><div class="w-3 h-3 rounded-full bg-green-500"></div></div>
-                    <div id="urlBar" class="flex-1 bg-black/40 text-xs text-gray-500 py-1.5 px-4 rounded-md text-center font-mono">panel.vkprex.cloud</div>
+        <div class="flex-1">
+            <div class="glass p-10 rounded-[2.5rem] border border-white/10 relative">
+                <i class="fas fa-quote-left text-5xl text-indigo-500/20 absolute top-8 left-8"></i>
+                <p class="text-xl text-gray-300 leading-relaxed mb-8 relative z-10">
+                    "Our mission at VKP.REX is to break down barriers in cloud computing. We're committed to delivering enterprise-grade infrastructure with simplicity and affordability at its core."
+                </p>
+                <div class="flex items-center gap-4 border-t border-white/10 pt-8">
+                    <div class="w-14 h-14 rounded-full bg-gradient-to-tr from-indigo-600 to-purple-600 p-0.5">
+                        <div class="w-full h-full rounded-full bg-black flex items-center justify-center font-bold">VKP</div>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-lg">VKP.REX Admin</h4>
+                        <p class="text-indigo-400 text-sm uppercase tracking-widest font-bold">Founder & CEO</p>
+                    </div>
                 </div>
-                <div id="panelView" class="flex-1 p-0 overflow-y-auto bg-[#0d0d0d]"></div>
             </div>
-        </main>
+        </div>
     </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
+</section>
