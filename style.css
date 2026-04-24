@@ -1,72 +1,92 @@
-/* Radiant Blink Animation for Map Dots */
+/* --- High Performance Theme --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap');
+
+.bg-purple-dark {
+    background: radial-gradient(circle at top, #1a0f3c 0%, #0a0518 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+.text-purple-glow { 
+    color: #a78bfa;
+    text-shadow: 0 0 20px rgba(167, 139, 250, 0.5);
+}
+
+/* --- Glowing Elements --- */
+.btn-glow {
+    background: #7c3aed;
+    color: white;
+    padding: 12px 0;
+    border-radius: 10px;
+    font-weight: 900;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    transition: 0.4s;
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
+    border: none;
+}
+
+.btn-glow:hover {
+    background: #8b5cf6;
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.6);
+}
+
+.btn-glow-large {
+    background: #7c3aed;
+    color: white;
+    padding: 20px 60px;
+    border-radius: 15px;
+    font-weight: 900;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    transition: 0.5s;
+    box-shadow: 0 0 30px rgba(124, 58, 237, 0.4);
+    border: none;
+}
+
+.btn-glow-large:hover {
+    box-shadow: 0 0 60px rgba(139, 92, 246, 0.7);
+    transform: scale(1.02);
+}
+
+/* --- Auth Inputs --- */
+.auth-input {
+    width: 100%; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 20px; border-radius: 15px; color: white; outline: none; transition: 0.3s;
+    font-weight: bold; font-size: 13px;
+}
+.auth-input:focus { border-color: #7c3aed; background: rgba(124, 58, 237, 0.05); }
+
+/* --- Radiant Network Dots --- */
 .dot { 
-    position: absolute; 
-    width: 10px; 
-    height: 10px; 
-    background: #6366f1; 
-    border-radius: 50%; 
-    box-shadow: 0 0 15px #6366f1; 
+    position: absolute; width: 10px; height: 10px; background: #a78bfa; border-radius: 50%; box-shadow: 0 0 20px #a78bfa; 
 }
-
 .dot::after {
-    content: ''; 
-    position: absolute; 
-    top: 50%; 
-    left: 50%; 
-    width: 10px; 
-    height: 10px;
-    border: 2px solid #6366f1; 
-    border-radius: 50%; 
-    transform: translate(-50%, -50%);
-    animation: radiant 2.5s infinite ease-out;
+    content: ''; position: absolute; top: 50%; left: 50%; width: 10px; height: 10px;
+    border: 1px solid #a78bfa; border-radius: 50%; transform: translate(-50%, -50%);
+    animation: radiant 3s infinite ease-out;
+}
+@keyframes radiant { 0% { width: 10px; height: 10px; opacity: 0.8; } 100% { width: 80px; height: 80px; opacity: 0; } }
+
+/* --- Marquee Animation --- */
+@keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+.animate-marquee { animation: marquee 30s linear infinite; display: inline-flex; }
+
+.glass-nav { background: rgba(6, 3, 14, 0.8); backdrop-filter: blur(20px); }
+.hero-blur {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 900px; height: 400px; background: radial-gradient(circle, rgba(124, 58, 237, 0.08) 0%, transparent 70%);
+    filter: blur(100px); pointer-events: none;
 }
 
-@keyframes radiant {
-    0% { width: 10px; height: 10px; opacity: 1; }
-    100% { width: 60px; height: 60px; opacity: 0; }
+.tab-btn {
+    padding: 14px 40px; border-radius: 12px; background: transparent;
+    color: #444; border: 1px solid rgba(255,255,255,0.05); font-weight: 900; font-size: 10px; letter-spacing: 2px;
 }
+.active-tab { background: #7c3aed; color: white; border: none; box-shadow: 0 0 30px rgba(124, 58, 237, 0.4); }
 
-/* Dashboard UI Components */
-.tab-btn { 
-    padding: 10px 24px; 
-    border-radius: 8px; 
-    background: #111; 
-    color: #444; 
-    border: 1px solid rgba(255,255,255,0.05); 
-    font-size: 11px; 
-    font-weight: 900; 
-    transition: 0.3s; 
-    cursor: pointer; 
-    letter-spacing: 1px;
+.sidebar-item {
+    padding: 18px 25px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.02);
+    border-radius: 15px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; color: #555;
 }
-
-.active-tab { 
-    background: #4f46e5; 
-    color: white; 
-    box-shadow: 0 0 20px rgba(79, 70, 229, 0.3); 
-    border-color: #6366f1;
-}
-
-.sidebar-item { 
-    padding: 14px 20px; 
-    background: #0a0a0a; 
-    border: 1px solid rgba(255,255,255,0.03); 
-    border-radius: 10px; 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    color: #666; 
-    transition: 0.2s; 
-    cursor: pointer; 
-}
-
-.sidebar-item:hover { 
-    color: white; 
-    background: #111; 
-    border-color: #4f46e5; 
-}
-
-/* Smooth Scrollbar for Dashboard */
-#scrollContainer::-webkit-scrollbar { width: 4px; }
-#scrollContainer::-webkit-scrollbar-track { background: #000; }
-#scrollContainer::-webkit-scrollbar-thumb { background: #222; border-radius: 10px; }
+.sidebar-item:hover { color: white; background: rgba(124, 58, 237, 0.1); border-color: #7c3aed; }
