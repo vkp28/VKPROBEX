@@ -1,103 +1,41 @@
-/* --- High Performance Theme --- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+body { background: radial-gradient(circle at top, #1a0f3c 0%, #0a0518 100%); }
+.text-purple-glow { color: #a78bfa; text-shadow: 0 0 15px rgba(167, 139, 250, 0.4); }
+.glass-nav { background: rgba(6, 3, 14, 0.7); backdrop-filter: blur(15px); }
 
-body {
-    background: radial-gradient(circle at top, #1a0f3c 0%, #0a0518 100%);
-    background-attachment: fixed;
-    min-height: 100vh;
-    font-family: 'Inter', sans-serif;
+/* Mac Panel Tabs */
+.mac-tab {
+    padding: 6px 20px; border-radius: 8px; font-size: 10px; font-weight: 900; 
+    text-transform: uppercase; color: #555; transition: 0.3s;
 }
+.mac-tab.active { background: #7c3aed; color: white; box-shadow: 0 0 15px rgba(124, 58, 237, 0.4); }
 
-.text-purple-glow { 
-    color: #a78bfa;
-    text-shadow: 0 0 15px rgba(167, 139, 250, 0.4);
+/* Sidebar Items */
+.sidebar-item {
+    padding: 14px 20px; background: rgba(255,255,255,0.02); border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.03); cursor: pointer; transition: 0.2s;
 }
+.sidebar-item:hover { background: rgba(124, 58, 237, 0.1); border-color: #7c3aed; color: #a78bfa; }
 
-/* --- Glass Navigation --- */
-.glass-nav {
-    background: rgba(6, 3, 14, 0.7);
-    backdrop-filter: blur(15px) saturate(180%);
-    -webkit-backdrop-filter: blur(15px);
-}
+/* Buttons & Map Pulse */
+.btn-login-ateex { background: #7c3aed; color: white; padding: 10px 35px; border-radius: 12px; font-weight: 900; }
+.btn-glow-white { background: white; color: black; padding: 18px 55px; border-radius: 15px; font-weight: 900; }
+.auth-input { width: 100%; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); padding: 18px; border-radius: 15px; color: white; outline: none; }
+.quote-card { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(20px); }
 
-/* --- Buttons --- */
-.btn-login-ateex {
-    background: #7c3aed;
-    color: white;
-    padding: 10px 35px;
-    border-radius: 12px;
-    font-weight: 900;
-    font-size: 13px;
-    letter-spacing: 0.5px;
-    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
-    border: none;
-    cursor: pointer;
+.map-dot {
+    position: absolute; width: 10px; height: 10px; background: #a78bfa; border-radius: 50%;
+    box-shadow: 0 0 15px #a78bfa;
 }
-
-.btn-login-ateex:hover {
-    background: #8b5cf6;
-    box-shadow: 0 0 25px rgba(139, 92, 246, 0.6);
-    transform: translateY(-2px);
+.map-dot::after {
+    content: ''; position: absolute; top: 50%; left: 50%; width: 10px; height: 10px;
+    border: 1px solid #a78bfa; border-radius: 50%; transform: translate(-50%, -50%);
+    animation: pulse 2s infinite ease-out;
 }
-
-.btn-glow-white {
-    background: white;
-    color: black;
-    padding: 18px 55px;
-    border-radius: 15px;
-    font-weight: 900;
-    font-size: 16px;
-    transition: 0.3s ease;
-    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
-    cursor: pointer;
-}
-
-.btn-glow-white:hover {
-    transform: scale(1.05);
-    box-shadow: 0 15px 40px rgba(255, 255, 255, 0.2);
-}
-
-/* --- Vision Quote Card --- */
-.quote-card {
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(20px);
-    transition: 0.4s ease;
-}
-
-.quote-card:hover {
-    border-color: rgba(124, 58, 237, 0.3);
-    transform: translateY(-5px);
-}
-
-/* --- Form Inputs --- */
-.auth-input {
-    width: 100%;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 20px;
-    border-radius: 16px;
-    color: white;
-    outline: none;
-    transition: 0.3s;
-    font-weight: bold;
-}
-
-.auth-input:focus {
-    border-color: #7c3aed;
-    background: rgba(124, 58, 237, 0.05);
-}
+@keyframes pulse { 0% { width: 10px; height: 10px; opacity: 1; } 100% { width: 40px; height: 40px; opacity: 0; } }
 
 .hero-blur {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 900px;
-    height: 450px;
-    background: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, transparent 70%);
-    filter: blur(100px);
-    pointer-events: none;
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 800px; height: 400px; background: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, transparent 70%);
+    filter: blur(100px); pointer-events: none;
 }
-
-.hidden { display: none; }
+.hidden { display: none !important; }
