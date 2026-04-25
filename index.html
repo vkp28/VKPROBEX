@@ -19,15 +19,23 @@
                 <div class="text-2xl font-black uppercase tracking-tighter italic">VKP<span class="text-purple-400">.REX</span></div>
             </div>
 
-            <div class="hidden lg:flex gap-8 items-center">
-                <button class="nav-btn"><i class="fas fa-gamepad mr-2 text-purple-500"></i>Game Hosting</button>
-                <button class="nav-btn">Hosting Services <i class="fas fa-chevron-down text-[8px] ml-1 opacity-50"></i></button>
-                <button class="nav-btn">Important <i class="fas fa-chevron-down text-[8px] ml-1 opacity-50"></i></button>
-                <button class="nav-btn">Legal <i class="fas fa-chevron-down text-[8px] ml-1 opacity-50"></i></button>
+            <div class="hidden lg:flex gap-6 items-center">
+                <button class="nav-btn">
+                    <i class="fas fa-gamepad text-purple-500"></i> Game Hosting
+                </button>
+                <button class="nav-btn">
+                    <i class="fas fa-server text-purple-500"></i> Hosting Services <i class="fas fa-chevron-down text-[8px] ml-1 opacity-50"></i>
+                </button>
+                <button class="nav-btn">
+                    <i class="fas fa-star text-purple-500"></i> Important <i class="fas fa-chevron-down text-[8px] ml-1 opacity-50"></i>
+                </button>
+                <button class="nav-btn">
+                    <i class="fas fa-gavel text-purple-500"></i> Legal <i class="fas fa-chevron-down text-[8px] ml-1 opacity-50"></i>
+                </button>
             </div>
 
             <div class="flex items-center gap-6">
-                <button class="currency-trigger">
+                <button class="currency-trigger flex items-center gap-2">
                     <span class="text-purple-500 font-bold">$</span> USD <i class="fas fa-chevron-down text-[8px] ml-1 opacity-50"></i>
                 </button>
                 <button onclick="openAuth()" class="login-action-btn">Login</button>
@@ -47,7 +55,6 @@
             <div class="text-center mb-20">
                 <div class="hosting-badge">Beyond Gaming</div>
                 <h2 class="text-6xl font-black uppercase italic tracking-tighter mt-4">Your Complete Hosting <span class="text-purple-600">Solution.</span></h2>
-                <p class="text-gray-500 mt-4 uppercase text-xs font-bold tracking-widest leading-loose">High-end hardware meets optimized network routing for absolute dominance.</p>
             </div>
 
             <div class="grid md:grid-cols-4 gap-6">
@@ -87,20 +94,20 @@
                 <div class="space-y-10">
                     <div class="flex items-center gap-4">
                         <div class="w-2 h-16 bg-purple-600"></div>
-                        <h2 class="text-8xl font-black uppercase italic tracking-tighter leading-none">OUR VISION.</h2>
+                        <h2 class="text-8xl font-black uppercase italic tracking-tighter">OUR VISION.</h2>
                     </div>
-                    <p class="text-gray-400 text-3xl leading-relaxed font-medium">
-                        Founded by <span class="text-white">VKP.REX</span>, we democratize enterprise infrastructure. Reliability is the standard, not the exception.
+                    <p class="text-gray-400 text-3xl leading-relaxed">
+                        Founded by <span class="text-white">VKP.REX</span>, we democratize enterprise infrastructure.
                     </p>
                 </div>
                 <div class="vision-quote-box">
                     <i class="fas fa-quote-left text-5xl text-purple-600/10 mb-10"></i>
-                    <p class="text-2xl text-gray-200 italic leading-relaxed mb-12">"Technology is only as good as the infrastructure it sits on. We remove the limits so you can build without fear."</p>
+                    <p class="text-2xl text-gray-200 italic mb-12">"Technology is only as good as the infrastructure it sits on."</p>
                     <div class="flex items-center gap-5 pt-10 border-t border-white/5">
                         <div class="founder-avatar">V</div>
                         <div>
                             <h4 class="text-white font-black text-xl uppercase italic">VKP.REX</h4>
-                            <p class="text-purple-500 text-xs font-black uppercase tracking-[0.3em] mt-1">Founder & CEO</p>
+                            <p class="text-purple-500 text-xs font-black uppercase tracking-[0.3em]">Founder & CEO</p>
                         </div>
                     </div>
                 </div>
@@ -108,33 +115,33 @@
         </section>
     </div>
 
-    <div id="dashboard" class="fixed inset-0 bg-[#06030e] hidden z-[100] p-6 flex flex-col">
-        <div class="flex-1 bg-[#0a0518] rounded-[3rem] border border-white/10 flex flex-col overflow-hidden shadow-2xl">
-            <div class="h-14 bg-[#140d2b] border-b border-white/5 flex items-center px-8 gap-8">
-                <div class="flex gap-2">
-                    <div class="w-3.5 h-3.5 rounded-full bg-[#ff5f56]"></div>
-                    <div class="w-3.5 h-3.5 rounded-full bg-[#ffbd2e]"></div>
-                    <div class="w-3.5 h-3.5 rounded-full bg-[#27c93f]"></div>
-                </div>
-                <div class="flex-1 text-center text-[11px] font-mono text-purple-400/30 uppercase tracking-[0.5em]">SYSTEM.VKP-REX.CLOUD//ROOT</div>
-                <button onclick="location.reload()" class="text-[10px] font-black text-purple-500 uppercase tracking-widest hover:text-white transition">Terminate</button>
-            </div>
-            <div class="flex-1 flex items-center justify-center opacity-10">
-                <i class="fas fa-satellite-dish text-[12rem]"></i>
-            </div>
+    <div id="authModal" class="fixed inset-0 bg-black/98 hidden z-[300] flex justify-center items-center backdrop-blur-3xl">
+        <div class="bg-[#0d0721] border border-white/5 p-16 rounded-[4rem] w-full max-w-lg">
+            <h2 id="authTitle" class="text-5xl font-black mb-12 uppercase italic text-center">Identity</h2>
+            <form id="authForm" class="space-y-6">
+                <input type="text" id="authName" placeholder="IDENTIFIER" class="auth-field hidden">
+                <input type="email" id="authEmail" placeholder="EMAIL" class="auth-field" required>
+                <input type="password" id="authPass" placeholder="PASSWORD" class="auth-field" required>
+                <button type="submit" class="login-action-btn w-full py-6">Authorize Session</button>
+            </form>
+            <p onclick="toggleAuthMode()" id="toggleText" class="text-center text-gray-500 text-[11px] mt-10 uppercase font-black cursor-pointer">Create Account</p>
         </div>
     </div>
 
-    <div id="authModal" class="fixed inset-0 bg-black/98 hidden z-[300] flex justify-center items-center backdrop-blur-3xl">
-        <div class="bg-[#0d0721] border border-white/5 p-16 rounded-[4rem] w-full max-w-lg shadow-2xl">
-            <h2 id="authTitle" class="text-5xl font-black mb-12 uppercase italic text-center tracking-tighter">Identity</h2>
-            <form id="authForm" class="space-y-6">
-                <input type="text" id="authName" placeholder="IDENTIFIER" class="auth-field hidden">
-                <input type="email" id="authEmail" placeholder="EMAIL ADDRESS" class="auth-field" required>
-                <input type="password" id="authPass" placeholder="ACCESS KEY" class="auth-field" required>
-                <button type="submit" class="login-action-btn w-full py-6 mt-4 text-base">Authorize Session</button>
-            </form>
-            <p onclick="toggleAuthMode()" id="toggleText" class="text-center text-gray-500 text-[11px] mt-10 uppercase font-black cursor-pointer hover:text-white transition">Request Access</p>
+    <div id="dashboard" class="fixed inset-0 bg-[#06030e] hidden z-[100] p-6 flex flex-col">
+        <div class="flex-1 bg-[#0a0518] rounded-[3rem] border border-white/10 flex flex-col overflow-hidden">
+            <div class="h-14 bg-[#140d2b] flex items-center px-8 border-b border-white/5">
+                <div class="flex gap-2">
+                    <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                    <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                    <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+                </div>
+                <div class="flex-1 text-center font-mono text-purple-400/30 text-[10px]">VKP-REX//ROOT</div>
+                <button onclick="location.reload()" class="text-purple-500 font-black">EXIT</button>
+            </div>
+            <div class="flex-1 flex items-center justify-center opacity-10">
+                <i class="fas fa-terminal text-[12rem]"></i>
+            </div>
         </div>
     </div>
 
