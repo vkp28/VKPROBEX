@@ -1,11 +1,9 @@
 let isSignUp = false;
 
-// SMOOTH SCROLL FOR EXPLORE BUTTON
 function scrollToSolutions() {
     document.getElementById('solutions-grid').scrollIntoView({ behavior: 'smooth' });
 }
 
-// MODAL CONTROLS
 function openAuth() { 
     document.getElementById('authModal').classList.remove('hidden'); 
 }
@@ -21,7 +19,6 @@ function toggleAuthMode() {
     document.getElementById('toggleText').innerText = isSignUp ? "Back to Login" : "Create Account";
 }
 
-// AUTHENTICATION LOGIC
 document.getElementById('authForm').addEventListener('submit', function(e) {
     e.preventDefault();
     const email = document.getElementById('authEmail').value;
@@ -29,7 +26,7 @@ document.getElementById('authForm').addEventListener('submit', function(e) {
 
     if (isSignUp) {
         localStorage.setItem(email, JSON.stringify({ email, pass }));
-        alert("Registration Successful. Please Login."); 
+        alert("Registration Successful."); 
         toggleAuthMode();
     } else {
         const user = JSON.parse(localStorage.getItem(email));
@@ -38,7 +35,7 @@ document.getElementById('authForm').addEventListener('submit', function(e) {
             document.getElementById('landingPage').classList.add('hidden');
             document.getElementById('dashboard').classList.remove('hidden');
         } else { 
-            alert("Critical Error: Unauthorized Access."); 
+            alert("Login Failed."); 
         }
     }
 });
