@@ -1,11 +1,27 @@
 let currentCurrency = 'INR';
-const exchangeRate = 83; // 1 USD = 83 INR
+const exchangeRate = 83; 
 
-// CURRENCY LOGIC
+// Toggle the currency menu visibility
+function toggleCurrencyMenu() {
+    const menu = document.getElementById('currencyMenu');
+    menu.classList.toggle('hidden');
+}
+
+// Close menu if user clicks outside
+window.onclick = function(event) {
+    if (!event.target.matches('.currency-trigger') && !event.target.matches('.currency-trigger *')) {
+        const menu = document.getElementById('currencyMenu');
+        if (menu && !menu.classList.contains('hidden')) {
+            menu.classList.add('hidden');
+        }
+    }
+}
+
 function setCurrency(type) {
     currentCurrency = type;
     document.getElementById('currentText').innerText = type;
     document.getElementById('currentFlag').innerText = (type === 'USD') ? '$' : '₹';
+    document.getElementById('currencyMenu').classList.add('hidden');
 
     const prices = document.querySelectorAll('.price-display');
     prices.forEach(el => {
@@ -18,8 +34,6 @@ function setCurrency(type) {
     });
 }
 
-// NAVIGATION & AUTH
-function scrollToSolutions() { document.getElementById('solutions-grid').scrollIntoView({ behavior: 'smooth' }); }
 function openAuth() { document.getElementById('authModal').classList.remove('hidden'); }
 
 document.getElementById('authForm').addEventListener('submit', function(e) {
@@ -28,19 +42,8 @@ document.getElementById('authForm').addEventListener('submit', function(e) {
     document.getElementById('landingPage').classList.add('hidden');
     document.getElementById('authModal').classList.add('hidden');
     document.getElementById('dashboard').classList.remove('hidden');
-    window.scrollTo(0, 0);
 });
 
-// STORE SEARCH
-function filterServices() {
-    let input = document.getElementById('gameSearch').value.toLowerCase();
-    let cards = document.getElementsByClassName('plan-card');
-    for (let card of cards) {
-        card.style.display = card.getAttribute('data-name').includes(input) ? "block" : "none";
-    }
-}
-
-// CHECKOUT LOGIC
 function openCheckout(name, priceINR) {
     let sym = (currentCurrency === 'USD') ? "$" : "₹";
     let base = (currentCurrency === 'USD') ? (priceINR / exchangeRate) : priceINR;
@@ -54,4 +57,4 @@ function openCheckout(name, priceINR) {
 }
 
 function closeCheckout() { document.getElementById('checkoutModal').classList.add('hidden'); }
-function proceedToPay() { document.getElementById('checkoutModal').classList.add('hidden'); document.getElementById('paymentModal').classList.remove('hidden'); }
+function scrollToSolutions() { document.getElementById('solutions-grid').scrollIntoView({ behavior: 'smooth' }); }
