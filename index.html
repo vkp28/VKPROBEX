@@ -21,7 +21,7 @@
 
         <section class="relative py-48 text-center">
             <div class="hero-glow"></div>
-            <h1 class="text-[10rem] md:text-[12rem] font-black tracking-tighter uppercase italic leading-none opacity-90">VKP<span class="text-purple-600">.REX</span></h1>
+            <h1 class="text-[8rem] md:text-[10rem] font-black tracking-tighter uppercase italic leading-none opacity-90">VKP<span class="text-purple-600">.REX</span></h1>
             <p class="text-purple-400/30 text-sm uppercase tracking-[1.5em] mb-16">Global hosting infrastructure</p>
             <button onclick="scrollToSolutions()" class="explore-btn">Explore Solutions <i class="fas fa-arrow-down ml-3"></i></button>
         </section>
@@ -34,27 +34,45 @@
             <div class="grid md:grid-cols-4 gap-6">
                 <div class="solution-card">
                     <div class="icon-circle text-orange-500"><i class="fas fa-desktop"></i></div>
-                    <h3 class="font-black italic uppercase text-xl">RDP Hosting</h3>
-                    <p class="mb-8 font-bold text-[10px] uppercase text-gray-500">Remote Desktop Access.</p>
+                    <h3 class="font-black italic uppercase text-xl mb-4">RDP Hosting</h3>
+                    <p class="mb-8 font-bold text-[10px] uppercase text-gray-500">Full admin control with NVMe speed.</p>
                     <div onclick="openAuth()" class="curved-square-action">Deploy Now</div>
                 </div>
                 <div class="solution-card">
                     <div class="icon-circle text-red-500"><i class="fas fa-server"></i></div>
-                    <h3 class="font-black italic uppercase text-xl">Colocation</h3>
-                    <p class="mb-8 font-bold text-[10px] uppercase text-gray-500">Tier-4 Data Centers.</p>
+                    <h3 class="font-black italic uppercase text-xl mb-4">Colocation</h3>
+                    <p class="mb-8 font-bold text-[10px] uppercase text-gray-500">Tier-4 secure data centers.</p>
                     <div onclick="openAuth()" class="curved-square-action">View Space</div>
                 </div>
                 <div class="solution-card">
                     <div class="icon-circle text-blue-500"><i class="fas fa-microchip"></i></div>
-                    <h3 class="font-black italic uppercase text-xl">VPS Hosting</h3>
-                    <p class="mb-8 font-bold text-[10px] uppercase text-gray-500">Ryzen Power Nodes.</p>
+                    <h3 class="font-black italic uppercase text-xl mb-4">VPS Hosting</h3>
+                    <p class="mb-8 font-bold text-[10px] uppercase text-gray-500">Ryzen Power Nodes 10Gbps.</p>
                     <div onclick="openAuth()" class="curved-square-action">Configure</div>
                 </div>
                 <div class="solution-card">
                     <div class="icon-circle text-purple-500"><i class="fas fa-globe"></i></div>
-                    <h3 class="font-black italic uppercase text-xl">Web Hosting</h3>
-                    <p class="mb-8 font-bold text-[10px] uppercase text-gray-500">cPanel Optimized.</p>
+                    <h3 class="font-black italic uppercase text-xl mb-4">Web Hosting</h3>
+                    <p class="mb-8 font-bold text-[10px] uppercase text-gray-500">cPanel optimized hosting.</p>
                     <div onclick="openAuth()" class="curved-square-action">Get Started</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 py-40 border-t border-white/5">
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div class="space-y-10">
+                    <div class="flex items-center gap-4"><div class="w-2 h-16 bg-purple-600"></div><h2 class="text-7xl font-black uppercase italic tracking-tighter">OUR VISION.</h2></div>
+                    <p class="text-gray-400 text-3xl leading-relaxed font-light">Founded by <span class="text-white font-bold">VKP.REX</span>, our mission is to democratize enterprise-grade infrastructure.</p>
+                    <p class="text-gray-500 text-lg leading-relaxed max-w-xl uppercase font-bold text-[11px] tracking-widest">Empowering developers and gamers to scale without limits.</p>
+                </div>
+                <div class="vision-quote-box p-12 bg-white/5 rounded-[3rem] border border-white/10 relative">
+                    <i class="fas fa-quote-left text-5xl text-purple-600/20 mb-8 block"></i>
+                    <p class="text-2xl text-gray-200 italic mb-12">"Technology is only as good as the infrastructure it sits on. At VKP.REX, we build the foundations of the future."</p>
+                    <div class="flex items-center gap-5 pt-8 border-t border-white/5">
+                        <div class="founder-avatar w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center font-black text-2xl italic">V</div>
+                        <div><h4 class="text-white font-black text-xl uppercase italic">VKP.REX</h4><p class="text-purple-500 text-[10px] font-black uppercase tracking-[0.3em]">Founder & CEO</p></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -66,34 +84,30 @@
                 <div class="logo-box-small"><i class="fas fa-rocket text-white"></i></div>
                 <span class="font-black uppercase italic text-lg">VKP<span class="text-purple-500">.REX</span></span>
             </div>
-            
             <div class="flex items-center gap-6">
-                <div class="relative" style="z-index: 9999;">
-                    <div id="currencyBtn" class="currency-trigger flex items-center gap-2 cursor-pointer">
+                <div class="relative" style="z-index: 10000;">
+                    <div id="currencyBtn" class="currency-trigger flex items-center gap-2 cursor-pointer bg-white/5 border border-purple-500/30 px-5 py-2 rounded-xl">
                         <span id="currentFlag" class="text-purple-500 font-bold">₹</span> 
-                        <span id="currentText">INR</span> 
+                        <span id="currentText" class="font-black text-[11px]">INR</span> 
                         <i class="fas fa-chevron-down text-[8px]"></i>
                     </div>
                     <div id="currencyMenu" class="absolute right-0 mt-2 w-40 bg-[#0d0721] border border-purple-500/50 rounded-xl hidden shadow-2xl">
-                        <div onclick="changeCurrency('USD', 0.012, '$')" class="px-4 py-4 text-[10px] font-black hover:bg-purple-600/40 cursor-pointer border-b border-white/5 text-white">USD ($)</div>
-                        <div onclick="changeCurrency('INR', 1, '₹')" class="px-4 py-4 text-[10px] font-black hover:bg-purple-600/40 cursor-pointer text-white">INR (₹)</div>
+                        <div onclick="changeCurrency('USD', 0.012, '$')" class="px-4 py-4 text-[11px] font-black hover:bg-purple-600/40 cursor-pointer border-b border-white/5 text-white uppercase">USD ($)</div>
+                        <div onclick="changeCurrency('INR', 1, '₹')" class="px-4 py-4 text-[11px] font-black hover:bg-purple-600/40 cursor-pointer text-white uppercase">INR (₹)</div>
                     </div>
                 </div>
-                <button onclick="location.reload()" class="text-xs font-black uppercase text-gray-500 hover:text-white">Logout</button>
+                <button onclick="location.reload()" class="text-[11px] font-black uppercase text-gray-500 hover:text-white transition">Logout</button>
             </div>
         </nav>
 
         <div class="flex-1 p-12 overflow-y-auto">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
-                <div class="plan-card">
-                    <div class="plan-header-dash"><i class="fas fa-microchip icon-box text-blue-400"></i></div>
-                    <div class="p-8">
-                        <span class="popular-tag">#1 POPULAR</span>
-                        <h3 class="text-xl font-black uppercase italic mt-4">Micro VPS</h3>
-                        <div class="flex justify-between items-center mt-6">
-                            <span class="text-2xl font-black price-display" data-base="299">₹299/mo</span>
-                            <div onclick="openCheckout('Micro VPS', 299)" class="order-btn-box bg-blue-600 px-6 py-2 rounded-lg text-[10px] font-black cursor-pointer">ORDER</div>
-                        </div>
+                <div class="plan-card-dash bg-white/5 p-8 rounded-[2.5rem] border border-white/5">
+                    <span class="popular-tag">#1 POPULAR</span>
+                    <h3 class="text-xl font-black uppercase italic mt-4">Micro VPS</h3>
+                    <div class="flex justify-between items-center mt-8 pt-6 border-t border-white/5">
+                        <span class="text-2xl font-black price-display" data-base="299">₹299/mo</span>
+                        <div onclick="openCheckout('Micro VPS', 299)" class="order-btn-box bg-blue-600 px-6 py-2 rounded-lg text-[10px] font-black cursor-pointer">ORDER</div>
                     </div>
                 </div>
             </div>
@@ -101,35 +115,29 @@
     </div>
 
     <div id="checkoutModal" class="fixed inset-0 bg-black/95 hidden z-[500] flex items-center justify-center p-6 backdrop-blur-xl">
-        <div class="bg-[#0d0721] border border-white/10 rounded-[3rem] p-10 w-full max-w-lg">
-            <h2 id="checkPlanName" class="text-4xl font-black italic uppercase mb-8 text-purple-500">Plan Name</h2>
-            <div class="space-y-4 border-b border-white/5 pb-8 mb-8 text-sm">
+        <div class="bg-[#0d0721] border border-white/10 rounded-[3rem] p-12 w-full max-w-lg shadow-2xl">
+            <h2 id="checkPlanName" class="text-4xl font-black italic uppercase mb-8 text-purple-500">Order Summary</h2>
+            <div class="space-y-4 border-b border-white/5 pb-8 mb-8 text-[12px] font-bold uppercase tracking-wider">
                 <div class="flex justify-between text-gray-400"><span>Base Price</span><span id="checkBase" class="text-white"></span></div>
                 <div class="flex justify-between text-gray-400"><span>Tax (18%)</span><span id="checkTax" class="text-white"></span></div>
-                <div class="flex justify-between text-2xl font-black text-cyan-400 pt-4"><span>Total</span><span id="checkTotal"></span></div>
+                <div class="flex justify-between text-3xl font-black text-cyan-400 pt-4 italic"><span>Total</span><span id="checkTotal"></span></div>
             </div>
-            <button onclick="proceedToPay()" class="login-action-btn w-full py-4 mb-4">Proceed to Pay</button>
+            <button onclick="proceedToPay()" class="login-action-btn w-full py-5 mb-4">Proceed to Pay</button>
             <button onclick="closeCheckout()" class="w-full text-gray-600 font-black text-[10px] uppercase">Cancel</button>
         </div>
     </div>
 
     <div id="paymentModal" class="fixed inset-0 bg-black/98 hidden z-[1000] flex items-center justify-center backdrop-blur-3xl">
         <div class="bg-[#0d0721] border border-purple-500/30 p-12 rounded-[3rem] w-full max-w-md text-center">
-            <h3 class="text-xl font-black uppercase italic text-purple-500 mb-8 text-left">Secure Payment</h3>
-            <div class="bg-white p-4 rounded-2xl inline-block mb-6">
-                <img id="qrImg" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=VKPREX" alt="QR Code" class="w-48 h-48">
-            </div>
-            <div class="mb-8">
-                <p class="text-gray-400 text-[10px] font-black uppercase mb-1">Amount to Pay</p>
-                <h2 id="finalPayAmount" class="text-4xl font-black italic text-white">₹0.00</h2>
-            </div>
-            <button onclick="location.reload()" class="login-action-btn w-full py-4">I Have Paid</button>
+            <div class="bg-white p-5 rounded-3xl inline-block mb-8"><img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=VKPREX_PAY" alt="QR" class="w-48 h-48"></div>
+            <h2 id="finalPayAmount" class="text-5xl font-black italic text-white mb-10">₹0.00</h2>
+            <button onclick="location.reload()" class="login-action-btn w-full py-5">I Have Paid</button>
         </div>
     </div>
 
     <div id="authModal" class="fixed inset-0 bg-black/98 hidden z-[300] flex justify-center items-center backdrop-blur-3xl">
-        <div class="bg-[#0d0721] border border-white/5 p-16 rounded-[4rem] w-full max-w-lg shadow-2xl">
-            <h2 class="text-4xl font-black mb-12 uppercase italic text-center text-white">Identity <span class="text-purple-500">Check</span></h2>
+        <div class="bg-[#0d0721] border border-white/10 p-16 rounded-[4rem] w-full max-w-lg shadow-2xl">
+            <h2 class="text-4xl font-black mb-12 uppercase italic text-center text-white">Identity Check</h2>
             <form id="authForm" class="space-y-6">
                 <input type="text" placeholder="FULL NAME" class="auth-field" required>
                 <input type="password" placeholder="ACCESS KEY" class="auth-field" required>
