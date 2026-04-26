@@ -62,7 +62,7 @@ function sendDataToFormspree() {
     btn.disabled = true;
 
     // REPLACE 'your_formspree_id' with your actual Formspree ID
-    fetch('https://formspree.io/f/your_formspree_id', {
+    fetch('https://formspree.io/f/mvzdylzv', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(checkoutData)
