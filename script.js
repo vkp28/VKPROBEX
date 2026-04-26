@@ -26,7 +26,23 @@ function changeCurrency(label, rate, symbol) {
     });
 }
 
-// Fixed Cursor Logic
+// Filter Logic for Search Bar
+function filterPlans() {
+    let input = document.getElementById('planSearch').value.toUpperCase();
+    let container = document.getElementById('plansContainer');
+    let cards = container.getElementsByClassName('plan-card-dash');
+
+    for (let i = 0; i < cards.length; i++) {
+        let title = cards[i].querySelector('.plan-title').innerText;
+        if (title.toUpperCase().indexOf(input) > -1) {
+            cards[i].style.display = "";
+        } else {
+            cards[i].style.display = "none";
+        }
+    }
+}
+
+// Cursor Logic
 const dot = document.querySelector('.cursor-dot');
 const outline = document.querySelector('.cursor-outline');
 
