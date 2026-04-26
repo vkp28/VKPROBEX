@@ -1,3 +1,5 @@
+// --- CONFIGURATION ---
+const formspreeURL = "https://formspree.io/f/mvzdylzv"; 
 let currentCurrency = 'INR';
 let globalTotal = "";
 
@@ -83,6 +85,47 @@ function proceedToPay() {
     document.getElementById('checkoutModal').classList.add('hidden');
     document.getElementById('finalPayAmount').innerText = globalTotal;
     document.getElementById('paymentModal').classList.remove('hidden');
+}
+
+// --- EMAIL SENDING LOGIC ---
+async function sendEmailAndReload() {
+    const name = document.getElementById('custName').value;
+    const phone = document.getElementById('custPhone').value;
+    const plan = document.getElementById('checkPlanName').innerText;
+    const amount = globalTotal;
+
+    const payButton = document.querySelector('#paymentModal button');
+    const originalText = payButton.innerText;
+    
+    payButton.innerText = "SENDING...";
+    payButton.disabled = true;
+
+    try {
+        const response = await fetch(formspreeURL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                Name: name,
+                Phone: phone,
+                Plan_Ordered: plan,
+                Total_Paid: amount
+            })
+        });
+
+        if (response.ok) {
+            alert("Payment Confirmation Sent!");
+            location.reload();
+        } else {
+            alert("Error sending confirmation. Please check your Formspree URL.");
+            payButton.innerText = originalText;
+            payButton.disabled = false;
+        }
+    } catch (error) {
+        console.error("Mail Error:", error);
+        alert("Network error. Could not send details.");
+        payButton.innerText = originalText;
+        payButton.disabled = false;
+    }
 }
 
 function closeCheckout() { document.getElementById('checkoutModal').classList.add('hidden'); }
