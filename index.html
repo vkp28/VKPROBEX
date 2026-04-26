@@ -36,26 +36,22 @@
                 <div class="bg-white/5 p-10 rounded-[2.5rem] border border-white/5">
                     <div class="w-16 h-16 rounded-2xl bg-orange-500 flex items-center justify-center mb-6 text-2xl"><i class="fas fa-desktop"></i></div>
                     <h3 class="font-black italic uppercase text-xl mb-4">RDP Hosting</h3>
-                    <p class="text-gray-500 text-[10px] font-bold uppercase mb-8">Full admin control with NVMe speed.</p>
-                    <button onclick="openAuth()" class="w-full py-4 bg-white/5 border border-white/10 rounded-xl font-black text-[10px] uppercase">Deploy Now</button>
+                    <button onclick="openAuth()" class="w-full py-4 bg-white/5 border border-white/10 rounded-xl font-black text-[10px] uppercase hover:bg-purple-600">Deploy Now</button>
                 </div>
                 <div class="bg-white/5 p-10 rounded-[2.5rem] border border-white/5">
                     <div class="w-16 h-16 rounded-2xl bg-red-500 flex items-center justify-center mb-6 text-2xl"><i class="fas fa-server"></i></div>
                     <h3 class="font-black italic uppercase text-xl mb-4">Colocation</h3>
-                    <p class="text-gray-500 text-[10px] font-bold uppercase mb-8">Tier-4 secure data centers.</p>
-                    <button onclick="openAuth()" class="w-full py-4 bg-white/5 border border-white/10 rounded-xl font-black text-[10px] uppercase">View Space</button>
+                    <button onclick="openAuth()" class="w-full py-4 bg-white/5 border border-white/10 rounded-xl font-black text-[10px] uppercase hover:bg-purple-600">View Space</button>
                 </div>
                 <div class="bg-white/5 p-10 rounded-[2.5rem] border border-white/5">
                     <div class="w-16 h-16 rounded-2xl bg-blue-500 flex items-center justify-center mb-6 text-2xl"><i class="fas fa-microchip"></i></div>
                     <h3 class="font-black italic uppercase text-xl mb-4">VPS Hosting</h3>
-                    <p class="text-gray-500 text-[10px] font-bold uppercase mb-8">Ryzen Power Nodes 10Gbps.</p>
-                    <button onclick="openAuth()" class="w-full py-4 bg-white/5 border border-white/10 rounded-xl font-black text-[10px] uppercase">Configure</button>
+                    <button onclick="openAuth()" class="w-full py-4 bg-white/5 border border-white/10 rounded-xl font-black text-[10px] uppercase hover:bg-purple-600">Configure</button>
                 </div>
                 <div class="bg-white/5 p-10 rounded-[2.5rem] border border-white/5">
                     <div class="w-16 h-16 rounded-2xl bg-purple-500 flex items-center justify-center mb-6 text-2xl"><i class="fas fa-globe"></i></div>
                     <h3 class="font-black italic uppercase text-xl mb-4">Web Hosting</h3>
-                    <p class="text-gray-500 text-[10px] font-bold uppercase mb-8">cPanel optimized hosting.</p>
-                    <button onclick="openAuth()" class="w-full py-4 bg-white/5 border border-white/10 rounded-xl font-black text-[10px] uppercase">Get Started</button>
+                    <button onclick="openAuth()" class="w-full py-4 bg-white/5 border border-white/10 rounded-xl font-black text-[10px] uppercase hover:bg-purple-600">Get Started</button>
                 </div>
             </div>
         </section>
@@ -68,10 +64,10 @@
                 </div>
                 <div class="p-12 bg-white/5 rounded-[3rem] border border-white/10 relative">
                     <i class="fas fa-quote-left text-5xl text-purple-600/20 mb-8 block"></i>
-                    <p class="text-2xl text-gray-200 italic mb-12">"Technology is only as good as the infrastructure it sits on. At VKP.REX, we build the foundations of the future."</p>
+                    <p class="text-2xl text-gray-200 italic mb-12">"Technology is only as good as the infrastructure it sits on."</p>
                     <div class="flex items-center gap-5">
                         <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center font-black text-2xl italic">V</div>
-                        <div><h4 class="text-white font-black text-xl uppercase italic">MR.VKP</h4><p class="text-purple-500 text-[10px] font-black uppercase tracking-widest">Founder & CEO</p></div>
+                        <div><h4 class="text-white font-black text-xl uppercase italic">MR.VKP</h4><p class="text-purple-500 text-[10px] font-black uppercase">Founder & CEO</p></div>
                     </div>
                 </div>
             </div>
@@ -81,12 +77,16 @@
     <div id="dashboard" class="fixed inset-0 bg-[#06030e] hidden z-[100] flex flex-col">
         <nav class="flex justify-between items-center px-10 py-4 bg-[#0a0518] border-b border-white/5">
             <span class="font-black uppercase italic text-lg">VKP<span class="text-purple-500">.REX</span></span>
-            <div class="flex items-center gap-6">
-                <div id="currencyBtn" class="cursor-pointer bg-white/5 border border-purple-500/30 px-5 py-2 rounded-xl text-[11px] font-black">
-                    <span id="currentFlag">₹</span> <span id="currentText">INR</span>
+            <div class="relative currency-container group">
+                <div id="currencyBtn" class="cursor-pointer bg-white/5 border border-purple-500/30 px-5 py-2 rounded-xl text-[11px] font-black flex items-center gap-2">
+                    <span id="currentFlag">₹</span> <span id="currentText">INR</span> <i class="fas fa-chevron-down text-[8px]"></i>
                 </div>
-                <button onclick="location.reload()" class="text-[11px] uppercase font-black text-gray-500">Logout</button>
+                <div id="currencyMenu" class="absolute top-full right-0 mt-2 bg-[#0d0721] border border-white/10 rounded-xl hidden group-hover:block z-[200] min-w-[120px]">
+                    <div onclick="changeCurrency('USD', 0.012, '$')" class="px-4 py-3 hover:bg-purple-600 text-[10px] font-black cursor-pointer">USD ($)</div>
+                    <div onclick="changeCurrency('INR', 1, '₹')" class="px-4 py-3 hover:bg-purple-600 text-[10px] font-black cursor-pointer border-t border-white/5">INR (₹)</div>
+                </div>
             </div>
+            <button onclick="location.reload()" class="text-[11px] uppercase font-black text-gray-500">Logout</button>
         </nav>
 
         <div class="flex-1 p-12 overflow-y-auto">
@@ -124,6 +124,41 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div id="authModal" class="fixed inset-0 bg-black/90 hidden z-[300] flex justify-center items-center backdrop-blur-xl">
+        <div class="bg-[#0d0721] p-16 rounded-[3rem] w-full max-w-lg border border-white/10">
+            <h2 class="text-center text-4xl font-black uppercase italic mb-10">Authorization</h2>
+            <form id="authForm" class="space-y-4">
+                <input type="text" placeholder="ACCESS NAME" class="w-full bg-white/5 p-5 rounded-xl border border-white/10 text-white font-black uppercase outline-none">
+                <input type="password" placeholder="SECURITY KEY" class="w-full bg-white/5 p-5 rounded-xl border border-white/10 text-white font-black uppercase outline-none">
+                <button type="submit" class="w-full bg-purple-600 py-5 rounded-xl font-black uppercase">Authorize</button>
+            </form>
+            <button onclick="document.getElementById('authModal').classList.add('hidden')" class="w-full text-gray-500 mt-6 font-black uppercase text-[10px]">Close</button>
+        </div>
+    </div>
+
+    <div id="checkoutModal" class="fixed inset-0 bg-black/95 hidden z-[500] flex items-center justify-center p-6 backdrop-blur-xl">
+        <div class="bg-[#0d0721] border border-white/10 rounded-[3rem] p-12 w-full max-w-lg">
+            <h2 id="checkPlanName" class="text-4xl font-black italic uppercase mb-8 text-purple-500">Checkout</h2>
+            <div class="space-y-4">
+                <input type="text" id="custName" placeholder="FULL NAME" class="w-full bg-white/5 border border-white/10 p-5 rounded-xl text-white uppercase font-black text-[10px] outline-none">
+                <input type="tel" id="custPhone" placeholder="PHONE NUMBER" class="w-full bg-white/5 border border-white/10 p-5 rounded-xl text-white uppercase font-black text-[10px] outline-none">
+            </div>
+            <div class="flex justify-between text-3xl font-black text-cyan-400 my-8 italic border-t border-white/5 pt-8">
+                <span>TOTAL:</span><span id="checkTotal"></span>
+            </div>
+            <button onclick="proceedToPay()" class="w-full bg-purple-600 py-5 rounded-xl font-black uppercase">Proceed to Pay</button>
+            <button onclick="document.getElementById('checkoutModal').classList.add('hidden')" class="w-full text-gray-500 mt-4 font-black uppercase text-[10px]">Cancel</button>
+        </div>
+    </div>
+
+    <div id="paymentModal" class="fixed inset-0 bg-black/98 hidden z-[1000] flex items-center justify-center text-center backdrop-blur-3xl">
+        <div class="p-12">
+            <div class="bg-white p-4 rounded-3xl inline-block mb-8"><img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=VKPREX_PAY" class="w-48 h-48"></div>
+            <h2 id="finalPayAmount" class="text-5xl font-black italic mb-10"></h2>
+            <button onclick="location.reload()" class="bg-purple-600 px-20 py-5 rounded-xl font-black uppercase">I Have Paid</button>
         </div>
     </div>
 
