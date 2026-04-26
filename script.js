@@ -22,7 +22,8 @@ function changeCurrency(label, rate, symbol) {
 }
 
 // Checkout Logic
-let currentPriceLabel = "₹";
+let checkoutData = {};
+
 function openCheckout(name, price) {
     const symbol = document.getElementById('currentFlag').innerText;
     const rate = symbol === '$' ? 0.012 : 1;
@@ -34,12 +35,47 @@ function openCheckout(name, price) {
 }
 
 function proceedToPay() {
-    if(!document.getElementById('custName').value || !document.getElementById('custPhone').value) {
+    const name = document.getElementById('custName').value;
+    const phone = document.getElementById('custPhone').value;
+    const plan = document.getElementById('checkPlanName').innerText;
+    const total = document.getElementById('checkTotal').innerText;
+
+    if(!name || !phone) {
         return alert("Please fill in your details.");
     }
-    document.getElementById('finalPayAmount').innerText = document.getElementById('checkTotal').innerText;
+
+    checkoutData = {
+        name: name,
+        phone: phone,
+        plan: plan,
+        amount: total
+    };
+
+    document.getElementById('finalPayAmount').innerText = total;
     document.getElementById('checkoutModal').classList.add('hidden');
     document.getElementById('paymentModal').classList.remove('hidden');
+}
+
+function sendDataToFormspree() {
+    const btn = document.getElementById('confirmPayBtn');
+    btn.innerText = "VERIFYING...";
+    btn.disabled = true;
+
+    // REPLACE 'your_formspree_id' with your actual Formspree ID
+    fetch('https://formspree.io/f/your_formspree_id', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(checkoutData)
+    })
+    .then(response => {
+        alert("Payment details sent for verification!");
+        location.reload();
+    })
+    .catch(error => {
+        alert("Error sending details. Please try again.");
+        btn.innerText = "I HAVE PAID";
+        btn.disabled = false;
+    });
 }
 
 // Cursor Movement
